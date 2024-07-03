@@ -1,0 +1,175 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+header{
+    height: 100px;
+    background-color: rgb(47,188,195);
+}
+header .logo img{
+    height: 100px;
+} 
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 100px);
+    padding: 1rem;
+    background-color: rgb(49, 91, 98);
+}
+
+.add-expense, .summary, .history {
+    flex: 1;
+    padding: 1rem;
+    background-color: #fff;
+    margin: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-expense .heading, .summary .heading, .history .heading {
+    margin-bottom: 1rem;
+}
+
+.add-expense h2, .summary h2, .history h2 {
+    color: #003135;
+    margin-bottom: 1rem;
+    font-size: 24px;
+}
+
+.add-expense .about, .add-expense .select-type {
+    margin-bottom: 1rem;
+}
+
+.add-expense input, .add-expense textarea, .add-expense select {
+    width: calc(100% - 2rem);
+    padding: 0.5rem;
+    margin: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-expense button {
+    width: calc(100% - 2rem);
+    padding: 0.75rem;
+    margin: 0.5rem 1rem;
+    background-color: rgb(47, 188, 195);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.add-expense button:hover {
+    background-color: rgb(35, 140, 145);
+}
+
+.summary .profit, .summary .expenses {
+    margin-bottom: 1rem;
+}
+
+.summary .profit h3, .summary .expenses h3 {
+    font-size: 18px;
+}
+
+.summary .piecharts {
+    display: flex;
+    justify-content: space-around;
+}
+
+.piechart {
+    width: 200px;
+    height: 200px;
+}
+
+.history .history-item {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.history .heading .delete{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-bottom: 10px;
+}
+.history .heading button{
+    font-size: 17px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: rgb(49, 91, 98);
+    cursor: pointer;
+}
+
+
+.summary {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+.summary .heading h2,
+.history .heading h2 {
+    color: #003135;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 30px;
+}
+.summary .profit,
+.summary .expenses {
+    margin-bottom: 20px;
+}
+.summary .profit h3,
+.summary .expenses h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.piecharts {
+    display: flex;
+    justify-content: space-around;
+}
+.piechart {
+    width: 300px;
+    height: 300px;
+}
+.history {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+.history .show-history {
+    max-height: 500px;
+    overflow-y: auto;
+}
+.history-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.history-item h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.history-item p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+
+
+
+

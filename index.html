@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackMySpend</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="">
+        </div>
+    </header>
+    <div class="container">
+        <div class="add-expense">
+            <div class="heading">
+                <h2>Add Expense</h2>
+            </div>
+            <div class="about">
+                <h3>From/To: </h3>
+                <input type="text" id="name" placeholder="From/To">
+            </div>
+            <div class="about">
+                <h3>Description: </h3>
+                <textarea id="description"></textarea>
+            </div>
+            <div class="about">
+                <h3>Amount: </h3>
+                <input type="number" id="amount" placeholder="₹">
+            </div>
+            <div class="select-type">
+                <select id="category" class="typeofexpense">
+                    <option value="select">Category</option>
+                    <option value="games">Games</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="dining">Dining Out</option>
+                    <option value="pets">Pets</option>
+                    <option value="services">Services</option>
+                    <option value="medicine">Medicine</option>
+                    <option value="education">Education</option>
+                    <option value="cab">Cab</option>
+                    <option value="hotel">Hotels</option>
+                    <option value="electricity">Electricity</option>
+                    <option value="water">Water</option>
+                </select>
+                <select id="income-expense" class="income-expense">
+                    <option value="select">Income/Expense</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </div>
+            <button onclick="saveData()">Save</button>
+        </div>
+        <div class="summary">
+            <div class="summary-part">
+                <div class="heading">
+                    <h2>Summary</h2>
+                </div>
+                <div class="profit">
+                    <h3>Net Profit: <span id="net-profit">0</span></h3>
+                </div>
+                <div class="expenses">
+                    <h3>Income: <span id="total-income">0</span></h3>
+                    <h3>Expenditure: <span id="total-expense">0</span></h3>
+                </div>
+            </div>
+            <div class="piecharts">
+                <div class="piechart" id="income-chart"></div>
+                <div class="piechart" id="expense-chart"></div>
+            </div>
+        </div>
+        <div class="history">
+            <div class="heading">
+                <h2>History</h2>
+                <div class="delete">
+                    <button onclick="clearHistory()">Clear All History</button>
+                </div>
+                <hr>
+            </div>
+            <div class="show-history" id="history">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="">
+        </div>
+    </header>
+    <div class="container">
+        <div class="add-expense">
+            <div class="heading">
+                <h2>Add Expense</h2>
+            </div>
+            <div class="about">
+                <h3>From/To: </h3>
+                <input type="text" id="name" placeholder="From/To">
+            </div>
+            <div class="about">
+                <h3>Description: </h3>
+                <textarea id="description"></textarea>
+            </div>
+            <div class="about">
+                <h3>Amount: </h3>
+                <input type="number" id="amount" placeholder="Amount">
+            </div>
+            <div class="select-type">
+                <select id="category" class="typeofexpense">
+                    <option value="select">Category</option>
+                    <option value="games">Games</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="dining">Dining Out</option>
+                    <option value="pets">Pets</option>
+                    <option value="services">Services</option>
+                    <option value="medicine">Medicine</option>
+                    <option value="education">Education</option>
+                    <option value="cab">Cab</option>
+                    <option value="hotel">Hotels</option>
+                    <option value="electricity">Electricity</option>
+                    <option value="water">Water</option>
+                </select>
+                <select id="income-expense" class="income-expense">
+                    <option value="select">Income/Expense</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </div>
+            <button onclick="saveData()">Save</button>
+        </div>
+        <div class="summary">
+            <div class="summary-part">
+                <div class="heading">
+                    <h2>Summary</h2>
+                </div>
+                <div class="profit">
+                    <h3>Net Profit: <span id="net-profit">0</span></h3>
+                </div>
+                <div class="expenses">
+                    <h3>Income: <span id="total-income">0</span></h3>
+                    <h3>Expenditure: <span id="total-expense">0</span></h3>
+                </div>
+            </div>
+            <div class="piecharts">
+                <div class="piechart" id="income-chart-container">
+                    <canvas id="income-chart"></canvas>
+                </div>
+                <div class="piechart" id="expense-chart-container">
+                    <canvas id="expense-chart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="history">
+            <div class="heading">
+                <h2>History</h2>
+                <button onclick="clearHistory()">Clear All History</button>
+            </div>
+            <div class="show-history" id="history">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+ -->
